@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "this is backEnd for Audiogram Report Generation Software",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S4Roy/ARGS.git"
+  },
+  "author": "Subhankar Roy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/S4Roy/ARGS/issues"
+  },
+  "homepage": "https://github.com/S4Roy/ARGS#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.4",
+    "mongoose": "^5.10.11"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "nodemon": "^2.0.5"
+  }
+}

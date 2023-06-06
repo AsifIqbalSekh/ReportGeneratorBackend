@@ -1,0 +1,195 @@
+###
+
+POST http://localhost:5000/audiologist/patiententry/
+Content-Type: application/json
+
+
+{"id": "ccc",
+"name": "Tamal Hansda",
+"gender": "Male",
+"age": "20",
+"address": "Delhi",
+"phone": "11122233344",
+"referred_by": "Dr.subho",
+"complaint": "nothing"
+}
+
+
+###
+
+POST http://localhost:5000/audiologist/audiogram-entry
+Content-Type: application/json
+
+
+{
+    "patientId":"IMTAMAL",
+    "leftChart": "1,2*3,4<note/>left chart note",
+    "rightChart": "1,2*3,4<note/>right chart note",
+    "rinne": "+ve-,,,<note/>Some note here",
+    "weber": "+ve-,,,<note/>Some note here"
+}
+
+
+###
+
+
+GET http://localhost:5000/audiologist/audiogram/5fa4390343f5b5883992af70
+
+
+###
+
+http://localhost:4200/audiogram-report/TH102320200/
+GET http://localhost:4200/audiogram-report/TH102320200/5fa41d59acf6846eb9fd8d77
+
+###
+
+PATCH http://localhost:5000/audiologist/audiogram-entry/edit
+Content-Type: application/json
+
+
+{
+    "patientId":"IMTAMAL",
+    "leftChart": "1,2*3,4<note/>edit",
+    "rightChart": "1,2*3,4<note/>right chart note",
+    "rinne": "+ve-,,,<note/>Some note here",
+    "weber": "+ve-,,,<note/>Some note here"
+}
+
+
+
+
+
+###
+
+POST http://localhost:5000/audiologist/audiologistlogin
+Content-Type: application/json
+
+
+{
+    "doctorUsername":"TH",
+    "doctorPassword":"qwerty"
+}
+
+
+###
+GET http://localhost:5000/audiologist/audiologistlogin
+
+
+
+###
+GET http://localhost:5000/audiologist/a/g
+
+
+###
+POST http://localhost:5000/audiologist/patiententry/
+Content-Type: application/json
+
+{}
+
+###
+
+GET http://localhost:5000/audiologist/audiogram-list/TH102320200
+
+###
+
+GET http://localhost:5000/audiologist/listbyname/k
+
+
+### list all the admins
+
+GET http://localhost:5000/admin/admins
+
+
+### add new admin
+
+POST http://localhost:5000/admin/register
+Content-Type: application/json
+
+{
+    "username":"admi1",
+    "password":"admin",
+    "master":"5f89a10c7b9c368e9012bf27"
+}
+
+### admin login
+POST http://localhost:5000/admin/login
+Content-Type: application/json
+
+{
+    "username":"admi1",
+    "password":"admin"
+}
+
+
+###
+
+POST http://localhost:5000/admin/audiologistregister
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoiNWZhNjQwMWRmN2RlMDcyMDgxNDg5ZDkwIiwiaWF0IjoxNjA0NzM2MjQ2fQ.jeXUg49uHkoozB_Xjz-1304YQfEhANnaSvu9nQpKkJg
+
+{
+    "username":"TH",
+    "name": "Tamal Hansda",
+    "phone":"90128302980",
+    "email":"f@u",
+    "degree":"btech",
+    "password":"qwerty"
+}
+
+### get audiologist by id
+
+GET http://localhost:5000/admin/audiologist/5fa68cdee2067a300caa434b
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoiNWZhNjQwMWRmN2RlMDcyMDgxNDg5ZDkwIiwiaWF0IjoxNjA0NzM2MjQ2fQ.jeXUg49uHkoozB_Xjz-1304YQfEhANnaSvu9nQpKkJg
+
+### get audiologist by id
+
+GET http://localhost:5000/audiologist/audiologist/5fa6dcbf078098768d797e19
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoiNWZhNmRjYmYwNzgwOTg3NjhkNzk3ZTE5IiwiaWF0IjoxNjA0ODExMzAwfQ.xXRxxLBD_avovT8vpDY9xQHf_bihgJRO6PBOokL2vy0
+
+
+### audiologist login
+POST http://localhost:5000/audiologist/login
+Content-Type: application/json
+
+{
+    "username":"TH",
+    "password":"qwerty"
+}
+
+###
+
+POST http://35.154.135.78/:5000/audiologist/login
+Content-Type: application/json
+
+{
+    "username":"TH",
+    "password":"qwerty"
+}
+
+
+### suggestions api test
+
+GET http://localhost:5000/suggestions/recommendations
+
+
+### suggestions api test
+
+PATCH http://localhost:5000/suggestions/recommendations
+Content-Type: application/json
+
+{
+    "fieldName": "recommendations",
+    "suggestions": ["Tamal","Hansda","Tothagata"]
+}
+
+### audiogram search
+
+GET http://localhost:5000/audiologist/audiogram-list/TH110920201
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoiNWZhNmRjYmYwNzgwOTg3NjhkNzk3ZTE5IiwiaWF0IjoxNjA0ODExMzAwfQ.xXRxxLBD_avovT8vpDY9xQHf_bihgJRO6PBOokL2vy0
+
+
+
+### audiogram search
+
+GET http://localhost:5000/audiologist/listbyphone/811
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoiNWZhNmRjYmYwNzgwOTg3NjhkNzk3ZTE5IiwiaWF0IjoxNjA0ODExMzAwfQ.xXRxxLBD_avovT8vpDY9xQHf_bihgJRO6PBOokL2vy0
